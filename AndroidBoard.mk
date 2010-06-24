@@ -18,11 +18,18 @@
 # should be added to this file.
 #
 
+LOCAL_PATH := $(call my-dir)
+
 # Least specific includes go first, so that they can get
 # overridden further down
 
-# include rules from the generic passion board
-include device/htc/passion-common/AndroidBoardCommon.mk
+$(call add-radio-file,recovery/images/firmware_install.565)
+$(call add-radio-file,recovery/images/firmware_error.565)
+$(call add-radio-file,recovery/images/bitmap_size.txt)
+
+include $(CLEAR_VARS)
+
+ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 
 # include the non-open-source counterpart to this file
--include vendor/htc/passion/AndroidBoardVendor.mk
+-include vendor/motorola/sholes/AndroidBoardVendor.mk
