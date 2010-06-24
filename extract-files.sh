@@ -23,6 +23,13 @@ adb pull /system/lib/libaudiopolicy.so ../../../vendor/motorola/$DEVICE/propriet
 adb pull /system/lib/libcamera.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libril_rds.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libnmea.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/egl/libEGL_POWERVR_SGX530_121.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/egl/libGLESv1_CM_POWERVR_SGX530_121.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/egl/libGLESv2_POWERVR_SGX530_121.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/hw/gralloc.omap3.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/hw/lights.sholes.so ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/lib/hw/sensors.sholes.so ../../../vendor/motorola/$DEVICE/proprietary
+
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/motorola/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -48,7 +55,9 @@ PRODUCT_COPY_FILES := \\
     vendor/motorola/__DEVICE__/proprietary/libaudio.so:obj/lib/libaudio.so \\
     vendor/motorola/__DEVICE__/proprietary/libaudiopolicy.so:obj/lib/libaudiopolicy.so \\
     vendor/motorola/__DEVICE__/proprietary/libril_rds.so:obj/lib/libril_rds.so \\
-    vendor/motorola/__DEVICE__/proprietary/libnmea.so:obj/lib/libnmea.so
+    vendor/motorola/__DEVICE__/proprietary/gralloc.omap3.so:obj/lib/hw/gralloc.omap3.so \\
+    vendor/motorola/__DEVICE__/proprietary/lights.sholes.so:obj/lib/hw/lights.sholes.so \\
+    vendor/motorola/__DEVICE__/proprietary/sensors.sholes.so:obj/lib/hw/sensors.sholes.so
 
 # All the blobs necessary for passion
 PRODUCT_COPY_FILES += \\
@@ -57,7 +66,12 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/libaudio.so:/system/lib/libaudio.so \\
     vendor/motorola/__DEVICE__/proprietary/libaudiopolicy.so:/system/lib/libaudiopolicy.so \\
     vendor/motorola/__DEVICE__/proprietary/libril_rds.so:/system/lib/libril_rds.so \\
-    vendor/motorola/__DEVICE__/proprietary/libnmea.so:/system/lib/libnmea.so
+    vendor/motorola/__DEVICE__/proprietary/libEGL_POWERVR_SGX530_121.so:/system/lib/egl/libEGL_POWERVR_SGX530_121.so \\
+    vendor/motorola/__DEVICE__/proprietary/libGLESv1_CM_POWERVR_SGX530_121.so:/system/lib/egl/libGLESv1_CM_POWERVR_SGX530_121.so \\
+    vendor/motorola/__DEVICE__/proprietary/libGLESv2_POWERVR_SGX530_121.so:/system/lib/egl/libGLESv2_POWERVR_SGX530_121.so \\
+    vendor/motorola/__DEVICE__/proprietary/gralloc.omap3.so:/system/lib/hw/gralloc.omap3.so \\
+    vendor/motorola/__DEVICE__/proprietary/lights.sholes.so:/system/lib/hw/lights.sholes.so \\
+    vendor/motorola/__DEVICE__/proprietary/sensors.sholes.so:/system/lib/hw/sensors.sholes.so
 
 EOF
 

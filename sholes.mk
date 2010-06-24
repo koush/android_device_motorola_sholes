@@ -26,40 +26,19 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     device/motorola/sholes/init.sholes.rc:root/init.sholes.rc
-
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.sf.lcd_density=240 \
-    rild.libpath=/system/lib/libhtc_ril.so \
-    wifi.interface=eth0 \
-    wifi.supplicant_scan_interval=15
-
-# Default network type.
-# 0 => WCDMA preferred.
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.default_network=0
-
-# The OpenGL ES API level that is natively supported by this device.
-# This is a 16.16 fixed point number
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=131072
-
-# This is a high density device with more memory, so larger vm heaps for it.
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapsize=24m
-
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
-PRODUCT_PROPERTY_OVERRIDES :=
+PRODUCT_PROPERTY_OVERRIDES +=
     ro.media.dec.jpeg.memcap=20000000
 
-DEVICE_PACKAGE_OVERLAYS := device/motorola/sholes/overlay
+DEVICE_PACKAGE_OVERLAYS += device/motorola/sholes/overlay
 
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
@@ -73,14 +52,14 @@ PRODUCT_COPY_FILES := \
 PRODUCT_COPY_FILES += \
     device/motorola/sholes/media_profiles.xml:system/etc/media_profiles.xml
 
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
     librs_jni
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Passion uses high-density artwork where available
-PRODUCT_LOCALES := hdpi
+PRODUCT_LOCALES += hdpi
 
 PRODUCT_COPY_FILES += \
     device/motorola/sholes/vold.fstab:system/etc/vold.fstab

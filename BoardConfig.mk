@@ -54,7 +54,7 @@ WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
 BOARD_USES_GENERIC_AUDIO := false
 
 BOARD_KERNEL_CMDLINE := console=ttyS2,115200n8 rw mem=244M@0x80C00000 init=/init ip=off brdrev=P3A_CDMA mtdparts=omap2-nand.0:640k@128k(mbm),384k@1408k(cdt),384k@3328k(lbl),384k@6272k(misc),3584k(boot),4608k(recovery),143744k(system),94848k(cache),268032k(userdata),2m(kpanic)
-BOARD_KERNEL_BASE := 0x20000000
+BOARD_KERNEL_BASE := 0x10000000
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
