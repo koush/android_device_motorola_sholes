@@ -20,14 +20,9 @@
 #
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
-
-PRODUCT_NAME := full_sholes
-PRODUCT_DEVICE := sholes
-PRODUCT_MODEL := Full Android on Sholes
 
 ## (1) First, the most specific values, i.e. the aspects that are specific to GSM
 
@@ -110,3 +105,10 @@ $(call inherit-product, device/motorola/sholes/media_a1026.mk)
 
 # stuff common to all HTC phones
 #$(call inherit-product, device/htc/common/common.mk)
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
+
+
+PRODUCT_NAME := full_sholes
+PRODUCT_DEVICE := sholes
+PRODUCT_MODEL := Full Android on Sholes
