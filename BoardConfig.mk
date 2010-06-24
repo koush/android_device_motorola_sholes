@@ -67,9 +67,9 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x08c60000   # limited so we enforce room to
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_RECOVERY_UI_LIB := librecovery_ui_sholes #librecovery_ui_htc
+TARGET_RECOVERY_UI_LIB := librecovery_ui_sholes librecovery_ui_generic
 
-#TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_htc
+TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_generic
 
 #TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 
