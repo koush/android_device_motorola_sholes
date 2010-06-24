@@ -33,8 +33,27 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
-PRODUCT_PROPERTY_OVERRIDES +=
-    ro.media.dec.jpeg.memcap=20000000
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.com.android.wifi-watchlist=GoogleGuest \
+	ro.error.receiver.system.apps=com.google.android.feedback \
+	ro.setupwizard.enterprise_mode=1 \
+	ro.com.google.clientidbase=android-verizon \
+	ro.com.google.locationfeatures=1 \
+	ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+	ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+	ro.cdma.home.operator.numeric=310004 \
+	ro.cdma.home.operator.alpha=Verizon \
+	ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
+	ro.cdma.data_retry_config=default_randomization=2000,0,0,120000,180000,540000,960000 \
+	ro.config.vc_call_vol_steps=7 \
+	ro.cdma.otaspnumschema=SELC,1,80,99 \
+	ro.telephony.call_ring.multiple=false \
+	ro.telephony.call_ring.delay=3000 \
+	ro.url.safetylegal=http://www.motorola.com/staticfiles/Support/legal/?model=A855 \
+	ro.setupwizard.enable_bypass=1 \
+	ro.media.dec.jpeg.memcap=20000000 \
+	dalvik.vm.lockprof.threshold=500 \
+	dalvik.vm.dexopt-flags=m=y
 
 DEVICE_PACKAGE_OVERLAYS += device/motorola/sholes/overlay
 
@@ -62,11 +81,15 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_LOCALES += hdpi
 
 PRODUCT_COPY_FILES += \
-    device/motorola/sholes/vold.fstab:system/etc/vold.fstab
+    device/motorola/sholes/vold.fstab:system/etc/vold.fstab\
+    device/motorola/sholes/apns-conf.xml:system/etc/apns-conf.xml
 
 
 PRODUCT_COPY_FILES += \
     device/motorola/sholes/tiwlan_drv.ko:system/lib/modules/tiwlan_drv.ko
+
+PRODUCT_COPY_FILES += \
+    device/motorola/sholes/init.rc:$(TARGET_ROOT_OUT)/root/init.rc
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/motorola/sholes/kernel
@@ -80,14 +103,13 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
 
 # media profiles and capabilities spec
-$(call inherit-product, device/motorola/sholes/media_a1026.mk)
+# $(call inherit-product, device/motorola/sholes/media_a1026.mk)
 
 # stuff common to all HTC phones
 #$(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
+$(call inherit-product, build/target/product/generic.mk)
 
 
-PRODUCT_NAME := full_sholes
+PRODUCT_NAME := generic_sholes
 PRODUCT_DEVICE := sholes
-PRODUCT_MODEL := Full Android on Sholes
