@@ -45,6 +45,7 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := libCustomWifi
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
 BOARD_WLAN_DEVICE           := tiwlan0
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/tiwlan_drv.ko"
+BOARD_WLAN_TI_STA_DK_ROOT   := system/wlan/ti/wilink_6_1
 #WIFI_DRIVER_FW_STA_PATH     := "/system/etc/firmware/fw_bcm4329.bin"
 #WIFI_DRIVER_FW_AP_PATH      := "/system/etc/firmware/fw_bcm4329_apsta.bin"
 WIFI_DRIVER_MODULE_ARG      := ""
