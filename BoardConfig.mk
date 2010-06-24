@@ -72,3 +72,4 @@ TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_generic
 #TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 
 TARGET_PROVIDES_INIT_RC := true
+USE_SHOLES_PROPERTY := true
