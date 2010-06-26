@@ -88,9 +88,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/motorola/sholes/tiwlan_drv.ko:system/lib/modules/tiwlan_drv.ko
 
-PRODUCT_COPY_FILES += \
-    device/motorola/sholes/init.rc:$(TARGET_ROOT_OUT)/root/init.rc
-
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/motorola/sholes/kernel
 else
