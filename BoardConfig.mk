@@ -31,7 +31,6 @@ USE_CAMERA_STUB := true
 TARGET_NO_BOOTLOADER := true
 
 TARGET_BOARD_PLATFORM := omap3
-#TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -72,7 +71,4 @@ TARGET_RECOVERY_UI_LIB := librecovery_ui_sholes librecovery_ui_generic
 
 TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_generic
 
-#TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
-
-TARGET_PROVIDES_INIT_RC := true
 USE_SHOLES_PROPERTY := true
