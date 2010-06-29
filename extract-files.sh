@@ -81,15 +81,10 @@ adb pull /system/etc/excluded-input-devices.xml ../../../vendor/motorola/$DEVICE
 adb pull /system/etc/firmware/wl1271.bin ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/gps.conf ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/motorola/12m/key_code_map.txt ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/permissions/android.hardware.telephony.cdma.xml ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/permissions/com.google.android.maps.xml ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/etc/permissions/features.xml ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/ppp/peers/pppd-ril.options ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/pvplayer_mot.cfg ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/updatecmds/google_generic_update.txt ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/etc/wifi/fw_wlan1271.bin ../../../vendor/motorola/$DEVICE/proprietary
-adb pull /system/framework/com.google.android.maps.jar ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/dsp/baseimage.dof ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/dsp/conversions.dll64P ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/dsp/h264vdec_sn.dll64P ../../../vendor/motorola/$DEVICE/proprietary
@@ -227,15 +222,10 @@ PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/wl1271.bin:/system/etc/firmware/wl1271.bin \\
     vendor/motorola/__DEVICE__/proprietary/gps.conf:/system/etc/gps.conf \\
     vendor/motorola/__DEVICE__/proprietary/key_code_map.txt:/system/etc/motorola/12m/key_code_map.txt \\
-    vendor/motorola/__DEVICE__/proprietary/android.hardware.telephony.cdma.xml:/system/etc/permissions/android.hardware.telephony.cdma.xml \\
-    vendor/motorola/__DEVICE__/proprietary/android.hardware.touchscreen.multitouch.distinct.xml:/system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \\
-    vendor/motorola/__DEVICE__/proprietary/com.google.android.maps.xml:/system/etc/permissions/com.google.android.maps.xml \\
-    vendor/motorola/__DEVICE__/proprietary/features.xml:/system/etc/permissions/features.xml \\
     vendor/motorola/__DEVICE__/proprietary/pppd-ril.options:/system/etc/ppp/peers/pppd-ril.options \\
     vendor/motorola/__DEVICE__/proprietary/pvplayer_mot.cfg:/system/etc/pvplayer_mot.cfg \\
     vendor/motorola/__DEVICE__/proprietary/google_generic_update.txt:/system/etc/updatecmds/google_generic_update.txt \\
     vendor/motorola/__DEVICE__/proprietary/fw_wlan1271.bin:/system/etc/wifi/fw_wlan1271.bin \\
-    vendor/motorola/__DEVICE__/proprietary/com.google.android.maps.jar:/system/framework/com.google.android.maps.jar \\
     vendor/motorola/__DEVICE__/proprietary/baseimage.dof:/system/lib/dsp/baseimage.dof \\
     vendor/motorola/__DEVICE__/proprietary/conversions.dll64P:/system/lib/dsp/conversions.dll64P \\
     vendor/motorola/__DEVICE__/proprietary/h264vdec_sn.dll64P:/system/lib/dsp/h264vdec_sn.dll64P \\
