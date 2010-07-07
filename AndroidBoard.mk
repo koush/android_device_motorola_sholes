@@ -29,7 +29,5 @@ $(call add-radio-file,recovery/images/bitmap_size.txt)
 
 include $(CLEAR_VARS)
 
-ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
-
 # include the non-open-source counterpart to this file
 -include vendor/motorola/sholes/AndroidBoardVendor.mk
