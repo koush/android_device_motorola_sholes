@@ -19,13 +19,6 @@
 # not specialized for any geography.
 #
 
-# Kernel Targets
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-ifeq ($(TARGET_KERNEL_CONFIG),)
-TARGET_PREBUILT_KERNEL := device/motorola/sholes/kernel
-endif # TARGET_KERNEL_CONFIG
-endif # TARGET_PREBUILT_KERNEL
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
@@ -94,6 +87,15 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/motorola/sholes/tiwlan_drv.ko:system/lib/modules/tiwlan_drv.ko
+
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/motorola/sholes/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
 
 $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
 
