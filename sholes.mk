@@ -105,7 +105,7 @@ $(call inherit-product-if-exists, vendor/motorola/sholes/sholes-vendor.mk)
 # stuff common to all HTC phones
 #$(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/generic.mk)
+$(call inherit-product, build/target/product/full.mk)
 
 
 PRODUCT_NAME := generic_sholes
