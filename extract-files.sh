@@ -30,6 +30,9 @@ adb pull /system/lib/hw/gralloc.omap3.so ../../../vendor/motorola/$DEVICE/propri
 adb pull /system/lib/hw/lights.sholes.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/hw/sensors.sholes.so ../../../vendor/motorola/$DEVICE/proprietary
 
+adb pull /system/app/ProgramMenuSystem.apk ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/app/ProgramMenu.apk ../../../vendor/motorola/$DEVICE/proprietary
+adb pull /system/app/PhoneConfig.apk ../../../vendor/motorola/$DEVICE/proprietary
 
 adb pull /system/lib/libbattd.so ../../../vendor/motorola/$DEVICE/proprietary
 adb pull /system/lib/libglslcompiler.so ../../../vendor/motorola/$DEVICE/proprietary
@@ -157,6 +160,11 @@ PRODUCT_COPY_FILES := \\
     vendor/motorola/__DEVICE__/proprietary/gralloc.omap3.so:obj/lib/hw/gralloc.omap3.so \\
     vendor/motorola/__DEVICE__/proprietary/lights.sholes.so:obj/lib/hw/lights.sholes.so \\
     vendor/motorola/__DEVICE__/proprietary/sensors.sholes.so:obj/lib/hw/sensors.sholes.so
+
+PRODUCT_COPY_FILES := \\
+    vendor/motorola/__DEVICE__/proprietary/ProgramMenuSystem.apk:/system/app/ProgramMenuSystem.apk \\
+    vendor/motorola/__DEVICE__/proprietary/ProgramMenu.apk:/system/app/ProgramMenu.apk \\
+    vendor/motorola/__DEVICE__/proprietary/PhoneConfig.apk:/system/app/PhoneConfig.apk
 
 # All the blobs necessary for passion
 PRODUCT_COPY_FILES += \\
