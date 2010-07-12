@@ -161,7 +161,7 @@ PRODUCT_COPY_FILES := \\
     vendor/motorola/__DEVICE__/proprietary/lights.sholes.so:obj/lib/hw/lights.sholes.so \\
     vendor/motorola/__DEVICE__/proprietary/sensors.sholes.so:obj/lib/hw/sensors.sholes.so
 
-PRODUCT_COPY_FILES := \\
+PRODUCT_COPY_FILES += \\
     vendor/motorola/__DEVICE__/proprietary/ProgramMenuSystem.apk:/system/app/ProgramMenuSystem.apk \\
     vendor/motorola/__DEVICE__/proprietary/ProgramMenu.apk:/system/app/ProgramMenu.apk \\
     vendor/motorola/__DEVICE__/proprietary/PhoneConfig.apk:/system/app/PhoneConfig.apk
