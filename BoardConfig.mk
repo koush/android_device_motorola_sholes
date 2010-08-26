@@ -72,3 +72,4 @@ TARGET_RECOVERY_UI_LIB := librecovery_ui_sholes librecovery_ui_generic
 TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_generic
 
 USE_SHOLES_PROPERTY := true
+TARGET_PREBUILT_KERNEL := device/motorola/sholes/kernel
